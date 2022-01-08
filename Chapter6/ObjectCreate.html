@@ -1,0 +1,33 @@
+<html>
+    <script>
+        let obj1 = Object.create({
+                x : 10,
+                y : 20        
+            }
+        )
+        console.log("Obj1 : ",obj1);
+
+        let obj2 = {
+            x:20,
+            y:30
+        }
+        console.log("Obj2 : ",obj2);
+
+        let obj3 =Object.create({
+            x:20,
+            y:30
+        },{
+            x:{
+                value:100,
+            },
+        });
+        console.log("Obj3 : ",obj3);
+
+        console.log("Obj3 ",obj3);
+        console.log("Obj3.x ",obj3.x);
+        console.log("Obj3.y ",obj3.y);
+        obj3.y = "Change";
+
+        console.log("Obj3 ",obj3);
+    </script>
+</html>

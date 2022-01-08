@@ -1,0 +1,33 @@
+<html>
+    <script>
+        let obj = {
+            username: "Hein",
+            password: "",
+            max : 100,
+            min :50,
+            hello:function()
+            {
+                console.log("Hello");
+            },
+            toString:function()
+            {
+                return `Max${this.max} Min${this.min}`
+            },
+            toJSON:function()
+            {   return{
+                    username : this.username,
+                    maximun : this.max,
+                    element : [1,2,3],
+                };
+            }
+        }
+        
+        let str = JSON.stringify(obj);
+        console.log("Str : ",str);
+
+        let obj2 = JSON.parse(str);
+        console.log("Obj2 ",obj2);
+
+        console.log("obj.toString ",obj.toString());
+    </script>
+</html>

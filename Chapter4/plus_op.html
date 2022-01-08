@@ -1,0 +1,94 @@
+<html>
+    <script>
+        let a = true;
+       let b = 4;
+       let c = "3";
+       let flag = false;
+
+       let obj={
+           valueOf:function()
+           {
+                console.log("ValueOf called");
+                return 3;
+
+           }
+       };
+
+       console.log("Type of a : ", typeof a);
+       console.log("Type of b : ", typeof b);
+       console.log("Type of flag : ", typeof flag);
+
+       console.log(" a + b : ",a + b);
+       console.log(" b + c : ",b + c);
+       console.log("obj +  b :",obj+b);
+
+
+       let obj2 ={
+           toString:function()
+           {
+               console.log("To string called");
+               return 5;
+           }
+       };
+       console.log("obj2 +  b :",obj2+b);
+
+
+       let obj3 ={
+           toString:function()
+           {
+               console.log("To string called");
+               return 5;
+           },
+           valueOf:function()
+           {
+               console.log("Value of");
+               return 3;
+           },
+          
+       };
+       console.log("obj3 +  b :",obj3+b);
+
+
+       let obj4 ={
+           toString:function()
+           {
+               console.log("To string called");
+               return 5;
+           },
+           valueOf:function()
+           {
+               console.log("Value of");
+               return {};
+           },
+          
+       };
+       console.log("obj4 +  b :",obj4+b);
+
+       let obj5 ={
+           toString:function()
+           {
+               console.log("To string called");
+               return obj3;
+           },
+           valueOf:function()
+           {
+               console.log("Value of");
+               return {};
+           },
+          
+       };
+       //console.log("obj5 +  b :",obj5+b);
+
+       let now = new Date();
+       console.log("obj4 + now ", obj4 + now);
+       console.log(" 2+3+'Hello' ",  2+3+"Hello");
+
+
+       console.log("[] + b ", [] + b);
+       console.log("[1] + b ", [1] + b);
+       console.log("[1,2] + b ", [1,2] + b);
+       console.log("null + b ", null + b);
+       console.log("undefined + b ", undefined + b)
+
+    </script>
+</html>
