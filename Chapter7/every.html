@@ -1,0 +1,27 @@
+<html>
+    <script>
+        let users = [
+            {
+                name : '',
+                age : 33,
+                gender : 'male',
+            },
+            {
+                name : 'Hein',
+                age : 23,
+                gender : 'male',
+            },
+            {
+                name : 'Daw Hla',
+                age : 44,
+                gender : 'female',
+            }
+        ];
+    
+    let isAllNameNotBlank = users.every(user => user.name != "");
+    console.log("Is all name not blank : ",isAllNameNotBlank);
+
+    let someNameAreBlank = users.some(user => user.name == "");
+    console.log("Is some name are blank : ",someNameAreBlank);
+    </script>
+</html>

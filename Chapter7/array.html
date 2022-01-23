@@ -1,0 +1,20 @@
+<html>
+    <script>
+        ages = [10,20,30,40,50,60];
+        console.log("Ages : ",ages);
+        console.log("ages[0] : ",ages[0]);
+        console.log("ages[4] : ",ages[4]);
+        console.log("ages.length : ",ages.length);
+        ages.push(20);
+        console.log("ages.length : ",ages.length);
+        let total = 0;
+        for(let i=0,len = ages.length; i < len; i++ )
+        {
+            total += ages[i];
+        }
+        console.log("Total : ",total);
+
+        console.log("ages instanceOf Object",ages instanceof Object);
+        
+    </script>
+</html>

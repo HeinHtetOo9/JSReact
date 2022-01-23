@@ -1,0 +1,41 @@
+<html>
+    <script>
+        let arr = [10,20,30];
+        arr.push(40);
+        arr[arr.length] = 50;
+        console.log("arr : ",arr);
+
+        arr.unshift(-10);
+        console.log("arr : ",arr);
+
+        arr.pop();
+        console.log("arr : ",arr);
+
+        arr.shift();
+        console.log("arr : ",arr);
+
+        delete arr[0];
+        console.log("arr : ",arr);
+
+        console.log("0 in arr : ",0 in arr);
+
+        for(const ele of arr)
+        {
+            console.log("Element : ",ele);
+        }
+
+        for(let [index,element] of arr.entries())
+        {
+            console.log("index : ",index,"element : ",element);
+        }
+
+        arr.forEach(element=>{
+            console.log("Element : ",element)});
+
+        for(let i=0, len = arr.length; i < len; i++)
+        {
+            console.log("Arr ",arr[i]);
+        }
+
+    </script>
+</html>

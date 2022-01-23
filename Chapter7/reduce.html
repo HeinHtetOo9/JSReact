@@ -1,0 +1,26 @@
+<html>
+    <script>
+        let arr = [1,2,3,4,5];
+        let mul = arr.reduce((a,b)=>{
+            console.log("a : ",a," b : ",b);
+            return a*b;
+        },1);
+        console.log("mul : ",mul);
+
+        //let arr = [1,2,3,4,5];
+        let mul2 = arr.reduce((a,b)=> a*b);
+        console.log("mul2 : ",mul2);
+
+        let min = arr.reduce((a,b) => a<b ? a:b);
+        console.log("Min : ",min);
+
+        let arr2 = [];
+        let add = arr2.reduce((a,b)=>{
+            console.log("a : ",a," b : ",b);
+            return a*b;
+        },0);
+        console.log("add : ",add);
+
+    </script>
+    </script>
+</html>
