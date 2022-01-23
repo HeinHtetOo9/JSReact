@@ -1,0 +1,32 @@
+<html>
+    <script>
+        function greet()
+        {
+            console.log("Hi");
+            console.log("Good Morning");
+            console.log("How are You?");
+        }
+
+        greet();
+        greet();
+
+        const square = function squ(x)
+        {
+            return x*x;
+
+        }
+        console.log("Square : ",square(3));
+
+        const triple = x=>x*x*x;
+        console.log("Triple : ",triple(3));
+
+        const multiline = ()=>{
+            console.log("Hello");
+            console.log("Good Afternoon");
+        };
+        multiline();
+
+        let hello = new Function(console.log("hello"));
+        hello();
+    </script>
+</html>

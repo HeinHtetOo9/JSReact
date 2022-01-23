@@ -1,0 +1,27 @@
+<html>
+    <script>
+        function fun([x,y,...rest])
+        {
+            console.log("x : ", x," y : ",y," rest : ",rest);
+        }
+        fun([1,2,3,4,5]);
+
+        let x = 10;
+        let y = 20;
+        [x,y] = [y,x];
+        console.log("x : ",x ," y : ",y);
+
+        let obj ={
+            name : "Hein",
+            age : 23,
+            school : "WYTU",
+            city : "Yangon"
+        }
+
+        function showParam({name,age,school})
+        {
+            console.log("Name is ",name," age is ",age," school is ",school);
+        }
+        showParam(obj);
+    </script>
+</html>

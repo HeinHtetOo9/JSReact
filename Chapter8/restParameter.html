@@ -1,0 +1,14 @@
+<html>
+    <script>
+        function func(first,...rest)
+        {
+            console.log("First : ",first);
+            for(const arg of rest)
+            {
+                console.log("Arg : ",arg);
+            }
+        }
+        func("hello");
+        func("Hello",1,2,3);
+    </script>
+</html>

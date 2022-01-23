@@ -1,0 +1,20 @@
+<html>
+    <script>
+        function greet(param)
+        {
+            let configDefault = {
+                color : "red",
+                text : "green",
+                background : "blue",
+            };
+            param = Object.assign(configDefault,param);
+            console.log("Color : ",param.color);
+            console.log("Text : ",param.text);
+            console.log("Background : ",param.background);
+        }
+
+        greet({
+            text : "Purple",
+        });
+    </script>
+</html>

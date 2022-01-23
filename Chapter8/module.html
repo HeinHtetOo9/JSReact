@@ -1,0 +1,25 @@
+<html>
+    <script>
+        function Mymodule()
+        {
+            let counter = 0;
+            function privateAPI()
+            {
+                console.log("private function");
+            }
+            function publicAPI()
+            {
+                console.log("public function",counter);
+                counter++;
+            }
+            return{
+                api:publicAPI
+            }
+
+        }
+        let m = Mymodule();
+        m.api();
+        m.api();
+        
+    </script>
+</html>

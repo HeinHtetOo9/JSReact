@@ -1,0 +1,25 @@
+<html>
+    <script>
+        function greet()
+        {
+            console.log("Hello");
+            console.log("How are you?");
+        };
+        const hello = greet;   //rule 1
+        hello();
+
+        function exeFunc(func)
+        {
+            console.log("execute function");
+            func();
+        }
+        exeFunc(greet);
+
+        function getFunc()
+        {
+            console.log("Get Function");
+            return greet;
+        }
+        getFunc()();
+    </script>
+</html>
