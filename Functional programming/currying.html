@@ -1,0 +1,35 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.20.0/ramda.min.js"></script>
+    <script>
+        const greet =(msg)=>"Hi "+msg;
+        const toUpper =(str)=>str.toUpperCase();
+        const appendHi =(str)=>str+" Hi";
+
+        let third = R.pipe(toUpper,appendHi);
+        console.log("Third : ",third("test"));
+
+        console.log("Greet ",greet("Hello ", "Mg Mg"));
+
+        function add(x,y)
+        {
+            return x+y;
+        }
+        function curryAdd(x)
+        {
+            return function(y)
+            {
+                return x+y;
+            }
+        }
+
+        console.log("Add : ",add(2,3));
+        let addTwo = curryAdd(2);
+        console.log("CurrAdd : ",addTwo(2));
+        console.log("CurrAdd : ",addTwo(4));
+        console.log("CurrAdd : ",addTwo(9));
+
+        let currAdd = R.curry(add);
+        console.log("currAdd : ",currAdd(2)(3));
+
+    </script>
+</html>

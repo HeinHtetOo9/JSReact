@@ -1,0 +1,10 @@
+<html>
+    <script>
+        const toUpper =(str)=>str.toUpperCase();
+        const appendHi =(str)=>str + " Hi";
+
+        let upperAndHi = (funA,funB)=>(str)=>funB(funA(str));
+        let twofunction = upperAndHi(toUpper,appendHi);
+        console.log("pipe : ",twofunction("test"));
+    </script>
+</html>

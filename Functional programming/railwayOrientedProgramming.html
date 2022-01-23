@@ -1,0 +1,25 @@
+<html>
+    <script>
+        const toUpper =(str)=>str.toUpperCase();
+        const appendHi =(str)=>str + " Hi";
+
+        let result = toUpper(appendHi("hello"));
+        console.log("Rsult : ",result);
+
+        const addHello =(str)=>str + "Hello";
+
+        function compose(funA,funB)
+        {
+            return function(str)
+            {
+                return funA(funB(str));
+            }
+        }
+        const process = compose(compose(toUpper,appendHi),addHello);
+        console.log("process : ",process("hein"));
+
+        let compose2 = (funA,funB)=>(str)=>funA(funB(str));
+        let twoFunction = compose2(appendHi,toUpper);
+        console.log("TwoFunction ",twoFunction("input"));
+    </script>
+</html>

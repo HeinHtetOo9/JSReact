@@ -1,0 +1,19 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.20.0/ramda.min.js"></script>
+    <script>
+        console.log("Identity : ",R.identity(1));
+
+        let toUpper = (str)=> str.toUpperCase();
+        let appendHi = (str)=> str + " Hi";
+
+        let log = R.tap(console.log);
+
+        let UpperAndHi = R.pipe(log,
+                                toUpper,
+                                log,
+                                appendHi,
+                                log);
+        
+        console.log("Pipe : ",UpperAndHi("test"));
+    </script>
+</html>

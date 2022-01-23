@@ -1,0 +1,13 @@
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.20.0/ramda.min.js"></script>
+    <script>
+        const toUpper =(str)=>str.toUpperCase();
+        const appendHi =(str)=>str + " Hi";
+
+        let UpperAndHi = R.compose(toUpper,appendHi);
+        console.log("Compose : ",UpperAndHi("test"));
+
+        let pipe = R.pipe(toUpper,appendHi);
+        console.log("Pipe : ",pipe("test"));
+    </script>
+</html>
