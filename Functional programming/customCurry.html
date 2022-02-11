@@ -1,0 +1,48 @@
+<html>
+    <script>
+        function add(x, y)
+        {
+        console.log("Add.length ",add.length);
+        return x+y;
+        }
+
+        function curry(func)
+        {
+            return partial(func,func.length,[]);
+        }
+
+        function partial(f,arity,arg=[])
+        {
+            console.log("Function length ",arity, " Arg ",arg);
+            if( arity == arg.length)
+            {
+                return f.bind(null,...arg)();
+            }
+            else return function()
+            {
+                console.log("Another case ",arguments);
+                return partial(f,arity,arg.concat(...arguments));
+            }
+            
+        }
+        function addThree(x,y,z)
+        {
+            return x+y+z;
+        }
+        
+        let add4 = curry(add);
+        console.log("Add4 ", add4(2)(3));
+
+        /*
+        function addThree(x,y,z)
+        {
+            return x+y+z;
+        }
+        let add5 = curry(addThree);
+        console.log("Add5 ",add5);
+        */
+        //console.log("Add5 ", add5(2)(3)(5));
+        let add5 = curry(addThree);
+        console.log("Add ",add5(1)(2)(3));
+    </script>
+</html>
