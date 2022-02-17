@@ -1,0 +1,19 @@
+<html>
+    <script>
+        class CustomError extends Error
+        {
+            constructor(msg)
+            {
+                super(msg);
+            }
+        }
+        try
+        {
+            throw new CustomError("CustomError");
+        }
+        catch(e)
+        {
+            console.log("Error :  ",e)
+        }
+    </script>
+</html>
