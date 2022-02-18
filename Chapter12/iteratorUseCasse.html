@@ -1,0 +1,58 @@
+<html>
+    <script>
+        let departments = [
+            { 
+                name : "HR",
+                employees : ["Mg Mg ","Aung Aung"]
+            },
+            { 
+                name : "Finance",
+                employees : ["Kyaw Kyaw ","Mya Mya"]
+            },
+        ];
+        let employees = ["Win Maung","Soe Min"];
+        
+        class Company
+        {
+            constructor(departments,employees)
+            {
+                this.departments = departments;
+                this.employees = employees;
+            }
+            [Symbol.iterator](){
+                let employeeLists = [];
+                for(const dept of this.departments)
+                {
+                    employeeLists.push(...dept.employees);
+                }
+                employeeLists.push(...this.employees);
+
+                console.log("Employee list ",employeeLists);
+
+                let i = 0;
+                let to = employeeLists.length;
+
+                return{
+                    next()
+                    {
+                        return{
+                            value: i < to? employeeLists[i]:undefined,
+                            done : i++ <to? false: true,
+                        }
+ 
+                    },
+                    [Symbol.iterator](){
+                        return this;
+                    }
+                }
+            }
+        }
+
+        let company = new Company(departments,employees);
+        
+        for(let emp of company)
+        {
+            console.log("Employee ",emp);
+        }
+    </script>
+</html>
