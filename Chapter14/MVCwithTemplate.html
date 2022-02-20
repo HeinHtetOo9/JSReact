@@ -1,0 +1,52 @@
+<html>
+    <body>
+        <div id="container">
+
+        </div>
+    </body>
+    <script>
+        function renderView(model)
+        {
+            let template = `<div>
+                        <div>hello</div>
+                        <h1>Name :${model.name}</h1>
+                        <h1>Age :${model.age}</h1>
+                        </div>`;
+        
+        let container = this.document.getElementById("container");
+        container.innerHTML = template;
+        }
+
+        function framework(model)
+        {
+            for(let [key,vlaue] of Object.entries(model))
+            {
+                if( typeof value !=="function")
+                {
+                    console.log(`Property ${key}`);
+                    model[`_${key}`] = model[`${key}`];
+                    Object.defineProperty(model,key,{
+                        set(newValue)
+                        {
+                            model[`_${key}`] = newValue;
+                            renderView(model);
+                        },
+                        get()
+                        {
+                            return model[`_${key}`];
+                        }
+                    });
+                }
+            }
+
+            return model;
+        }
+        let model = {
+           name : "Hein Htet",
+           age : 23,
+        };
+        framework(model);
+        model.age = "Something";
+        console.log("Obj ",model.name , " Age ",model.age);
+    </script>
+</html>

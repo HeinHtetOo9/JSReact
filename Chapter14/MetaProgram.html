@@ -1,0 +1,30 @@
+<html>
+    <script>
+        let obj = {
+            name : "Hein",
+            age : 23,
+            school : ""
+        };
+
+        function checkStringIsEmpty()
+        {
+            let keys = [];
+            for(const [key,value] of Object.entries(obj))
+            {
+                //console.log("Typeof ",typeof value, " value ",value);
+                if((typeof value === "string") && value ==="")
+                {    
+                    keys.push(`Property ${key} is empty`);
+                }
+            }
+           return keys;
+        }
+
+        let emptyKeys = checkStringIsEmpty(obj);
+        console.log("Empty ",emptyKeys);
+        console.log("Empty ",checkStringIsEmpty({
+            data : "",
+            age : 30,
+        }));
+    </script>
+</html>
