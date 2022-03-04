@@ -1,0 +1,35 @@
+<html>
+    <style>
+        #container
+        {
+            width:300;
+            height:300;
+            background-color : royalblue;
+        }
+    </style>
+    <body>
+        <div id = "container" onclick="alert('Hello')"></div>
+    </body>
+    <script>
+        window.onload = function()
+        {
+            console.log("Window has been loaded");
+        };
+        window.onload = function()
+        {
+            console.log("Window has been loaded twice");
+        };
+
+        let container = document.querySelector("#container");
+        container.addEventListener("click",(event)=>{
+            console.log("Div clicked");
+        });
+        document.addEventListener("click",(event)=>{
+            //console.log("event ",event);
+            console.log("Document clicked");
+        });
+        container.addEventListener("click",(event)=>{
+            console.log("Div clicked2");
+        });
+    </script>
+</html>
