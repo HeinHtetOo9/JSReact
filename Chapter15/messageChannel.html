@@ -1,0 +1,11 @@
+<html>
+    <script>
+        let channel = new MessageChannel;
+        let myPort = channel.port1;
+        let otherPort = channel.port2;
+
+        myPort.postMessage("hello");
+
+        otherPort.onmessage = (e)=>console.log("Received ",e.data);
+    </script>
+</html>
